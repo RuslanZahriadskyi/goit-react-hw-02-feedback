@@ -1,9 +1,9 @@
-import { Component } from "react";
-import "./App.css";
-import Section from "./components/Section";
-import Statistics from "./components/Statistics";
-import FeedbackOptions from "./components/FeedbackOptions";
-import Notification from "./components/Notification";
+import { Component } from 'react';
+import './App.css';
+import Section from './components/Section';
+import Statistics from './components/Statistics';
+import FeedbackOptions from './components/FeedbackOptions';
+import Notification from './components/Notification';
 
 class App extends Component {
   constructor() {
@@ -14,9 +14,9 @@ class App extends Component {
       bad: 0,
     };
   }
-  countFeedback = (e) => {
+  countFeedback = e => {
     const feedback = e.target.textContent;
-    this.setState((prevFeedback) => ({
+    this.setState(prevFeedback => ({
       ...prevFeedback,
       ...{ [feedback.toLowerCase()]: prevFeedback[feedback.toLowerCase()] + 1 },
     }));
@@ -37,13 +37,9 @@ class App extends Component {
   }
 
   render() {
-    // console.log(FeedbackOptions);
     const { good, neutral, bad } = this.state;
     const totalFeedback = this.countTotalFeedback();
     const positiveFedback = this.countPositiveFeedbackPercentage(totalFeedback);
-    // console.log(totalFeedback);
-    // console.log(positiveFedback);
-    // const buttons = Object.keys(this.state);
 
     return (
       <>
