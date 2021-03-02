@@ -24,7 +24,7 @@ class App extends Component {
 
   countTotalFeedback() {
     const values = Object.values(this.state);
-
+    console.log(values);
     const totalFeedback = values.reduce((acc, value) => acc + value, 0);
 
     return totalFeedback;
@@ -51,7 +51,7 @@ class App extends Component {
         </Section>
 
         <Section title="Statistics">
-          {positiveFedback !== 0 ? (
+          {totalFeedback !== 0 ? (
             <Statistics
               good={good}
               neutral={neutral}
